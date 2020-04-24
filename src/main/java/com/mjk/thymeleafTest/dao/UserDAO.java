@@ -18,4 +18,7 @@ public interface UserDAO {
 	
 	@Select("INSERT INTO TEST.USER (id, name, addr, age) VALUES (#{id}, #{name}, #{addr}, #{age})")
 	void signUpProc(UserVO user);
+	
+	@Select("SELECT * FROM TEST.USER where name LIKE CONCAT('%',#{name},'%')")
+	List<UserVO> searchText(String name); // 이름에 김자가 있으면 출력하기
 }

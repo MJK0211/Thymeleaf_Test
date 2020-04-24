@@ -40,4 +40,12 @@ public class UserController {
 		model.addAttribute("userList", userDAO.userSelect(id));
 		return "page/userAll";
 	}
+	
+	@GetMapping("/searchText")
+	public String searchText(Model model) {
+				
+		String name ="영";
+		model.addAttribute("userList", userDAO.searchText(name));
+		return "page/userAll";
+	}
 }
