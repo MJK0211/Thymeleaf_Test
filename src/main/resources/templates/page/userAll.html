@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{layout/defaultlayout :: main-fragment(  
+                                                ~{::title},
+                                                ~{:: #userAll-static-resources},
+                                                ~{:: #userAll-main-content},  
+                                               )}">
+<head>
+<meta charset="UTF-8">
+<title>userAll</title>
+<th:block id="userAll-static-resources">
+	<script src="content-script.js"></script>
+	<link rel="stylesheet" th:href="@{css/table.css}">
+</th:block>
+</head>
+<body>
+	<div id="userAll-main-content">
+		<table class=table>
+			<thead>
+				<tr>
+					<th>번호</th>
+					<th>아이디</th>
+					<th>이름</th>
+					<th>주소</th>
+					<th>나이</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="user : ${userList}">
+					<td th:text="${userStat.count}">1</td>
+					<td th:text="${user.id}"></td>
+					<td th:text="${user.name}"></td>
+					<td th:text="${user.addr}"></td>
+					<td th:text="${user.age}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>

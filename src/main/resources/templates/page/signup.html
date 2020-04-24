@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+th:replace="~{layout/defaultlayout :: main-fragment(  
+                                                ~{::title},
+                                                ~{:: #signup-static-resources},
+                                                ~{:: #signup-main-content},  
+                                               )}">
+<head>
+<meta charset="UTF-8">
+<title>signup</title>
+<th:block id="signup-static-resources">
+<script src="content-script.js"></script>
+</th:block>
+</head>
+<body>
+<div id="signup-main-content">
+<form th:action="@{/inProc.do}" th:object="${userVO}" method="post">
+아이디: <input type="text" th:field=*{id} ><br>
+이름: <input type="text" th:field=*{name} ><br>
+주소: <input type="text" th:field=*{addr} ><br>
+나이: <input type="text" th:field=*{age} ><br>
+<button type="submit">입력</button>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+@charset "UTF-8";
+* {
+    box-sizing: border-box;
+}
+header {
+text-align:center;
+margin:20px;
+padding:20px;
+background-color:#FADAD8;
+font-size:80px;
+color: white;
+}
+nav {
+float: left;
+width: 30%;
+height: 300px;
+font-size:50px;
+padding:20px;
+background-color:#ABD0CE;
+}
+article {
+float: left;
+width: 70%;
+height: 300px;
+padding:20px;
+background-color:#F0E5DE;
+}
+footer {
+text-align:center;
+padding:10px;
+background-color:#D9D4CF;
+}
