@@ -15,6 +15,7 @@ import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
 @PropertySource("classpath:/application.properties")
+//@MapperScan(basePackages = {"com.mjk.thymeleafTest.dao"})
 public class RootConfig {
 	
 	@Bean
